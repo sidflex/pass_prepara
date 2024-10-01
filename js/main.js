@@ -1,30 +1,16 @@
 function hoursNow() {
-	const agora = new Date();
-	const minutos = agora.getMinutes();
-	const segundos = agora.getSeconds();
-	const segundoNumeroMinutos = minutos % 10;
-
-	const resultado = segundoNumeroMinutos * 5 + Math.floor(segundos / 10) + 1;
-
-	console.log(`Resultado: ${resultado}`);
-	return resultado;
+	const a = new Date(),
+		b = a.getMinutes(),
+		c = a.getSeconds(),
+		d = 5 * (b % 10) + Math.floor(c / 10) + 1;
+	return console.log(`Resultado: ${d}`), d;
 }
-
 function passVerif() {
-	const passNow = hoursNow();
-	const pass = document.getElementById('inputPass');
-
-	if (pass.value == 1299) {
-		alert(passNow);
-	} else {
-		alert('senha invalida!!');
-	}
+	const a = hoursNow(),
+		b = document.getElementById('inputPass');
+	1299 == b.value ? alert(a) : alert('senha invalida!!');
 }
-
 const pass = document.getElementById('inputPass');
-
-pass.addEventListener('keydown', function (event) {
-	if (event.key === 'Enter') {
-		passVerif();
-	}
+pass.addEventListener('keydown', function (a) {
+	'Enter' === a.key && passVerif();
 });
