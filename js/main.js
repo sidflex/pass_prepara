@@ -16,7 +16,6 @@ function passVerif() {
 
 	if (pass.value == 1299) {
 		alert(passNow);
-		console.log('deu bom');
 	} else {
 		alert('senha invalida!!');
 	}
